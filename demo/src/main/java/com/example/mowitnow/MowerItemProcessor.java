@@ -1,17 +1,31 @@
 package com.example.mowitnow;
 // MowerItemProcessor.java
-import org.springframework.batch.item.ItemProcessor;
 
-public class MowerItemProcessor implements ItemProcessor<Mower, Mower> {
+import org.springframework.batch.core.configuration.annotation.JobScope;
+import org.springframework.batch.item.ItemProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+@Component
+@JobScope
+public class MowerItemProcessor implements ItemProcessor<MowerInstruction, Mower> {
     private final Lawn lawn;
 
+
+    @Autowired
     public MowerItemProcessor(Lawn lawn) {
         this.lawn = lawn;
     }
 
+
     @Override
-    public Mower process(Mower mower) throws Exception {
-        for (char instruction : mower.getInstructions().toCharArray()) {
+    public Mower process(MowerInstruction mowerInstruction) throws Exception {
+
+        Mower mower = mowerInstruction.getMower();
+        String instructions = mowerInstruction.getInstructions();
+
+        for (char instruction : instructions.toCharArray()) {
             switch (instruction) {
                 case 'G':
                     mower.turnLeft();

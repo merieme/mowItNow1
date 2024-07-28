@@ -1,13 +1,14 @@
 package com.example.mowitnow;
 
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.context.annotation.Bean;
-
 public class Mower {
     private int x;
     private int y;
     private Direction direction;
     private String instructions;
+
+    public Mower() {
+
+    }
 
     public enum Direction {
         N, E, S, W
@@ -28,6 +29,22 @@ public class Mower {
 
     public int getX() {
         return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
     }
 
     public int getY() {

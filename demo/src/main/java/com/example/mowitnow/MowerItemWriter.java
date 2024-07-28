@@ -1,9 +1,11 @@
 package com.example.mowitnow;// MowerItemWriter.java
-import com.example.mowitnow.Mower;
+
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class MowerItemWriter implements ItemWriter<Mower> {
     @Override
     public void write(List<? extends Mower> mowers) {
