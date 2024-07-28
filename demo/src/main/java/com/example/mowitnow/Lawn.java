@@ -1,6 +1,5 @@
 package com.example.mowitnow;
 
-// Lawn.java
 public class Lawn {
     private int maxX;
     private int maxY;

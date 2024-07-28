@@ -1,4 +1,4 @@
-package com.example.mowitnow;// MowerItemWriter.java
+package com.example.mowitnow;
 
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Component;

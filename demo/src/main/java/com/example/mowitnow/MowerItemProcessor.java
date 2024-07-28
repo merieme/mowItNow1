@@ -1,5 +1,4 @@
 package com.example.mowitnow;
-// MowerItemProcessor.java
 
 import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.item.ItemProcessor;
